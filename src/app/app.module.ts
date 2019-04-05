@@ -18,7 +18,7 @@ import { ProductoDetalleComponent } from './productos/producto-detalle/producto-
     ProductosComponent,
     ProductosListaComponent,
     ProductoItemComponent,
-    ProductoDetalleComponent
+    ProductoDetalleComponent,
   ],
   imports: [
     BrowserModule,

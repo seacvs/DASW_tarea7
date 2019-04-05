@@ -6,5 +6,5 @@ export class Producto {
         public categoria: string,
         public precio: number,
         public existencia: number
-    ){}
+    ) {}
 }

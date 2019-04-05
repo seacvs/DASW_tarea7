@@ -1,3 +1,44 @@
-<p>
-  productos-lista works!
-</p>
+<div style="text-align:center" >
+    <h4 *ngIf="!modoCarrito">
+      Productos
+    </h4>
+    <h4 *ngIf="modoCarrito">
+      Carrito de compras
+    </h4>
+  </div>
+
+<!-- producto-LISTA.COMPONENT.HTML -->
+<button *ngIf="!modoCarrito" (click)="anadirAlCarrito()" type="button" id="btCrear" class="btn btn-success btn-lg mt-2" data-toggle="modal" data-target="#modelId">
+    Añadir al Carrito
+  </button>
+ 
+  
+  <h5 *ngIf ="!modoCarrito">Artículos seleccionados: {{tempCarrito}}</h5>
+
+  <span *ngIf="!mododCarrito">
+    <app-producto-item
+    *ngFor="let pro of productos"
+    [producto]="pro" 
+    (mostrarDetalles)="mostrarDetalle($event)"
+    (anadirAlCarro) = "actualizarTotalCarrito($event)">
+    >
+  </app-producto-item>
+</span>
+  <span *ngIf="mododCarrito">
+    <app-producto-item
+    *ngFor="let pro of carrito"
+    [producto]="pro" 
+    (mostrarDetalles)="mostrarDetalle($event)"
+    (productoPorBorrar)= "borrarProductoCarrito($event)"
+    >
+  </app-producto-item>
+</span>
+
+
+
+
+<p *ngIf="modoCarrito">Total del carrito: ${{totalCarrito}}</p>
+
+<button *ngIf="!modoCarrito" (click)="anadirAlCarrito()" type="button" id="btCrear" class="btn btn-success btn-lg mt-2" data-toggle="modal" data-target="#modelId">
+    Añadir al Carrito
+  </button>

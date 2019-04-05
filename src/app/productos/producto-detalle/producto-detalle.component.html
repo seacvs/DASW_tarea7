@@ -1,3 +1,16 @@
-<p>
-  producto-detalle works!
-</p>
+
+<a class="media-left" href="#">
+    <img class="rounded-circle" src="https://picsum.photos/50/50?image={{producto.id}}" alt="">
+  </a>
+  
+  <div class="media-body ">
+    <h5>{{producto.nombre}}</h5>
+    <p>Marca: {{producto.marca}} </p>
+    <p>Costo:$ {{producto.precio}} </p>
+    <p>Categoría: {{producto.categoria}} </p>
+    <p *ngIf="modoCarrito"> Existencia: {{producto.existencia}} </p>
+  </div>
+  
+  <button (click)= "cancelar()" type="button" id="btCancelar" class="btn btn-warning btn-lg mt-2" data-toggle="modal" data-target="#modelId">
+      Salir de detalles
+    </button>
