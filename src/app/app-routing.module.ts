@@ -6,6 +6,7 @@ import { ProductoDetalleComponent } from './productos/producto-detalle/producto-
 import { ProductosListaComponent } from './productos/productos-lista/productos-lista.component';
 
 const routes: Routes = [
+  {path:'', component: HomeComponent},
   {path:'home', component: HomeComponent},
   {path:'productos', component: ProductosComponent, children:[
     {path:'', component: ProductosListaComponent},
