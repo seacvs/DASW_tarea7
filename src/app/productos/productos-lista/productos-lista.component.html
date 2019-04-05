@@ -8,23 +8,23 @@
   </div>
 
 <!-- producto-LISTA.COMPONENT.HTML -->
-<button *ngIf="!modoCarrito" (click)="anadirAlCarrito()" type="button" id="btCrear" class="btn btn-success btn-lg mt-2" data-toggle="modal" data-target="#modelId">
+<button *ngIf="!modoCarrito" (click)="enviarAlCarrito()" type="button" id="btCrear" class="btn btn-success btn-lg mt-2" data-toggle="modal" data-target="#modelId">
     Añadir al Carrito
   </button>
  
   
   <h5 *ngIf ="!modoCarrito">Artículos seleccionados: {{tempCarrito}}</h5>
 
-  <span *ngIf="!mododCarrito">
+  <span *ngIf="!modoCarrito">
     <app-producto-item
     *ngFor="let pro of productos"
     [producto]="pro" 
     (mostrarDetalles)="mostrarDetalle($event)"
-    (anadirAlCarro) = "actualizarTotalCarrito($event)">
+    (anadirAlCarro) = "anadirAlCarrito($event)">
     >
   </app-producto-item>
 </span>
-  <span *ngIf="mododCarrito">
+  <span *ngIf="modoCarrito">
     <app-producto-item
     *ngFor="let pro of carrito"
     [producto]="pro" 
@@ -37,8 +37,8 @@
 
 
 
-<p *ngIf="modoCarrito">Total del carrito: ${{totalCarrito}}</p>
+<h2 *ngIf="modoCarrito">Total del carrito: ${{totalCarrito}}</h2>
 
-<button *ngIf="!modoCarrito" (click)="anadirAlCarrito()" type="button" id="btCrear" class="btn btn-success btn-lg mt-2" data-toggle="modal" data-target="#modelId">
+<button *ngIf="!modoCarrito" (click)="enviarAlCarrito()" type="button" id="btCrear" class="btn btn-success btn-lg mt-2" data-toggle="modal" data-target="#modelId">
     Añadir al Carrito
   </button>
